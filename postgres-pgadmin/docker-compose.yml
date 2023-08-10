@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+  db:
+    container_name: postgres_database
+    image: postgres:bullseye
+    volumes:
+      # - postgres-db:/var/lib/postgresql/data
+      - ./postgresdb:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD=root123456
+      - POSTGRES_USER=EDAL
+  
+  pgAdmin:
+    depends_on:
+      - db
+    image: dpage/pgadmin4:7.5
+    volumes:
+      - ./pgadmin:/var/lib/pgadmin
+    ports:
+      - 8001:8001
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=elieserloco51@gmail.com
+      - PGADMIN_DEFAULT_PASSWORD=root123456
+      - PGADMIN_LISTEN_PORT=8001 
+      - PGADMIN_LISTEN_ADDRESS=0.0.0.0
+
+volumes:
+  postgres-db:
+    external: true

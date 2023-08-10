@@ -1,0 +1,21 @@
+{
+  "name": "cron-ticker",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
+    "start": "node app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "node-cron": "^3.0.2"
+  },
+  "devDependencies": {
+    "jest": "^29.6.2",
+    "jest-esm-transformer": "^1.0.0"
+  }
+}
