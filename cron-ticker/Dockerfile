@@ -1,5 +1,5 @@
 # tomar una imagen como base
-FROM node:19.2-alpine
+FROM --platform=linux/amd64 node:19.2-alpine
 
 # cambiar el cursor a la carpeta app
 WORKDIR /app
