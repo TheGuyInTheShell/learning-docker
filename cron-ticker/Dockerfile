@@ -30,7 +30,7 @@ WORKDIR /app
 COPY --from=prod-dep /app/node_modules ./node_modules
 # copia toda el contenido del la imagen en la carpeta destino /app
 COPY app.js ./
-COPY task ./tasks
+COPY tasks ./tasks
 
 # los CMD se ejecutan cuando termina de montarse el contenedor
 CMD ["node", "app.js"]
