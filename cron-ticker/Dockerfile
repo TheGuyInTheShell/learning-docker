@@ -20,7 +20,6 @@ RUN npm i --prod
 FROM node:19.2-alpine as builder
 WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
-# copia toda el contenido del la imagen en la carpeta destino /app
 COPY . .
 RUN npm run test
 
